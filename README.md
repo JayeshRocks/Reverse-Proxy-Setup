@@ -9,5 +9,5 @@ This script is also usable to create reverse proxy for other types of pages (not
 Paste the command line below into the terminal
 
 ```bash
-wget https://raw.githubusercontent.com/JayeshRocks/MCDynmap-ProxySetup/main/dynps.sh
+wget https://raw.githubusercontent.com/JayeshRocks/MCDynmap-ProxySetup/main/dynps.sh && bash dynps.sh
 ```
