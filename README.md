@@ -6,6 +6,8 @@ This script is also usable to create reverse proxy for other types of pages (not
 
 # Usage:
 
+Type sudo su or sudo -i in your terminal to gain root access
+
 Paste the command line below into the terminal
 
 ```bash
