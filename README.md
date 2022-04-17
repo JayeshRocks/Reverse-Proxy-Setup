@@ -6,4 +6,6 @@ This is an automated script made for Linux machines, it setups and installs a re
 
 Paste the command line below into the terminal
 
+```bash
 wget https://raw.githubusercontent.com/JayeshRocks/mcdynmap-proxysetup/main/dynps.sh
+```
