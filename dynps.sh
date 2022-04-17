@@ -93,5 +93,7 @@ echo " server {
 ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdomain.conf                                                                           
                                                                                                                                                                   
 certbot --nginx                                                                                                                                                   
-                                                                                                                                                                  
+  
+sudo service nginx reload
+                                                                                                                                                                
 echo "Your Dynmap reverse proxy should now be ready and available at https://$ccdomain" 
