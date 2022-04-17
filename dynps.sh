@@ -58,7 +58,8 @@ echo "Set “IPv4 address” to the IP Address of your Machine"
 echo "Set Proxy Status to "DNS Only""
 echo "Click "Save""
 echo ""
-read -p "Press Enter to Proceed"
+read -p "Press Enter to Proceed
+"
 
 echo ""
 echo "--------------------------"
