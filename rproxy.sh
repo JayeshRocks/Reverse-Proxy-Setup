@@ -98,7 +98,7 @@ certbot --nginx
 sudo service nginx reload
 
 echo "This script is automatically assuming that you have http://
-for your reverse proxied website, you can change it to https://
+for your newly reverse proxied website, you can change it to https://
 according to your liking by cd /etc/nginx/sites-available/$ccdomain.conf
 and change http:// to https:// manually"
                                                                                                                                                                 
