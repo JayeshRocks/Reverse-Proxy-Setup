@@ -96,5 +96,10 @@ ln -s /etc/nginx/sites-available/$ccdomain.conf /etc/nginx/sites-enabled/$ccdoma
 certbot --nginx                                                                                                                                                   
   
 sudo service nginx reload
+
+echo "This script is automatically assuming that you have http://
+for your reverse proxies website, you can change it to https://
+according to your liking by cd /etc/nginx/sites-available/$ccdomain.conf
+and change http:// to https:// manually"
                                                                                                                                                                 
 echo "Your reverse proxy should now be ready and available at https://$ccdomain" 
