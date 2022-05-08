@@ -1,6 +1,6 @@
 # Reverse Proxy Setup
 
-This is an automated script made for Linux machines, it setups and installs a reverse proxy for your website
+This is an automated script made for Linux machines, it setups and installs a reverse proxy with a ssl for your website
 
 This script is also usable to create reverse proxy for any types of pages as it uses ngnix
 
