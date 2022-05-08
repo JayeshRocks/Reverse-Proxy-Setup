@@ -104,6 +104,7 @@ certbot --nginx
   
 sudo service nginx reload
 
-echo "Your virtual block for reverse proxy is saved at/etc/nginx/sites-enabled/$ccdomain.conf"
+echo "Your virtual block of your reverse proxy is saved at (Primary)"/etc/nginx/sites-enabled/$ccdomain.conf and"
+echo "(Secondary) /etc/nginx/sites-available/$ccdomain.conf"
                                                                                                                                                                 
 echo "Your reverse proxy should now be ready and available at https://$ccdomain" 
