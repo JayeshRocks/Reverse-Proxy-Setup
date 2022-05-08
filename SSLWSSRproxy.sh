@@ -114,4 +114,16 @@ sudo service nginx reload
 echo "Your virtual block of your reverse proxy is saved at (Primary) /etc/nginx/sites-enabled/$ccdomain.conf and"
 echo "(Secondary) /etc/nginx/sites-available/$ccdomain.conf"
                                                                                                                                                                 
-echo "Your reverse proxy should be ready and available at https://$ccdomain" 11 q
+echo "You need to add a few lines to the Primary conf file of your virtual host, location specified above, after that your reverse proxy should be ready and available at https://$ccdomain"
+
+echo "Add this to the Primary virtual block with the location mentioned above, after proxy_pass $ccsec://$ccip;"
+echo "-------------------------------------"
+echo "proxy_set_header Host $host;"
+echo "proxy_set_header X-Forwarded-Proto $scheme;"
+echo "proxy_http_version 1.1;"
+echo "proxy_buffering off;"
+echo "proxy_set_header Upgrade $http_upgrade;"
+echo "proxy_set_header Connection "upgrade";"
+echo "gzip off;"
+echo "-------------------------------------"
+
