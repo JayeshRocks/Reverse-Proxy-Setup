@@ -6,10 +6,22 @@ This script is also usable to create reverse proxy for any types of pages as it 
 
 # Usage:
 
-1. Type sudo su or sudo -i in your terminal to gain root access
+For SSL Only:
 
-2. Paste the command line below into the terminal
+- Type sudo su or sudo -i into your terminal to gain root access
+
+- Paste the command line below into the terminal for Setup with only SSL
 
 ```bash
-wget https://raw.githubusercontent.com/JayeshRocks/Reverse-Proxy-Setup/main/rproxy.sh && bash rproxy.sh
+wget https://raw.githubusercontent.com/JayeshRocks/Reverse-Proxy-Setup/main/SSLonlyRproxy.sh && bash SSLonlyRproxy.sh
+```
+
+For SSL and WSS (Websockets):
+
+- Type sudo su or sudo -i into your terminal to gain root access
+
+- Paste the command line below into the terminal for Setup with SSL and WSS sockets
+
+```bash
+wget https://raw.githubusercontent.com/JayeshRocks/Reverse-Proxy-Setup/main/SSLWSSRproxy.sh && bash SSLWSSRproxy.sh
 ```
