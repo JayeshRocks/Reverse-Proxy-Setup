@@ -58,6 +58,9 @@ echo "Set “IPv4 address” to the IP Address of your Machine"
 echo "Set Proxy Status to "DNS Only""
 echo "Click "Save""
 echo ""
+echo "NOTE: If you don't use cloudflare simply add you machine's ip"
+echo "to an A record on your domain"
+echo ""
 read -p "Press Enter to Proceed
 "
 
@@ -78,7 +81,11 @@ echo "What is the (sub)domain name you want to use for website? (Eg. www.yoursit
 read ccdomain                                                                                                                                                     
                                                                                                                                                                   
 echo "What is the IP address and the port of your website which it's running on (Eg. 192.168.1.101:1024)"                                                                                   
-read ccip                                                                                                                                                         
+read ccip 
+
+echo "Would you like http:// or https:// for the Proxy Pass"
+echo "Type http or https"
+read ccsec                                                                                                                                                        
                                                                                                                                                                   
 echo " server {                                                                                                                                                   
         server_name $ccdomain;                                                                                                                                    
@@ -87,7 +94,7 @@ echo " server {
         access_log /var/log/nginx/reverse-access.log;                                                                                                             
         error_log /var/log/nginx/reverse-error.log;                                                                                                               
         location / {                                                                                                                                              
-                    proxy_pass http://$ccip;                                                                                                                      
+                    proxy_pass $ccsec://$ccip;                                                                                                                      
   }                                                                                                                                                               
 } " > /etc/nginx/sites-available/$ccdomain.conf                                                                                                                   
                                                                                                                                                                   
@@ -97,9 +104,6 @@ certbot --nginx
   
 sudo service nginx reload
 
-echo "This script is automatically assuming that you have http://
-for your newly reverse proxied website, you can change it to https://
-according to your requirements by going to /etc/nginx/sites-available/$ccdomain.conf
-and change http:// to https:// manually"
+echo "Your virtual block for reverse proxy is saved at/etc/nginx/sites-enabled/$ccdomain.conf"
                                                                                                                                                                 
 echo "Your reverse proxy should now be ready and available at https://$ccdomain" 
