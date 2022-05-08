@@ -94,7 +94,14 @@ echo " server {
         access_log /var/log/nginx/reverse-access.log;                                                                                                             
         error_log /var/log/nginx/reverse-error.log;                                                                                                               
         location / {                                                                                                                                              
-                    proxy_pass $ccsec://$ccip;                                                                                                                      
+                    proxy_pass $ccsec://$ccip;
+                    proxy_set_header Host $host;
+                    proxy_set_header X-Forwarded-Proto $scheme;
+                    proxy_http_version 1.1;
+                    proxy_buffering off;
+                    proxy_set_header Upgrade $http_upgrade;
+                    proxy_set_header Connection "upgrade";
+gzip off;                                                                                                                      
   }                                                                                                                                                               
 } " > /etc/nginx/sites-available/$ccdomain.conf                                                                                                                   
                                                                                                                                                                   
